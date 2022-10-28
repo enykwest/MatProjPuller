@@ -15,7 +15,7 @@ Ele1 = "Re"
 Ele2 = "O"
 
 # Where should everything be saved? (required)
-path = r'FullPathToDir\{}x{}y'.format(Ele1, Ele2)
+path = r'FullPathToDir\{}x{}y'.format(Ele1, Ele2) # to catch odd behavior, path must already exist
 
 # Database name (required)
 data = r"{}x{}y-V2_2.csv".format(Ele1, Ele2) # we will start by using CSV files, but this is infeasible once the database gets large.
@@ -73,7 +73,8 @@ import time
 #Pymatgen materials package
 import pymatgen as pmg
 import pymatgen.io.cif
-from pymatgen import MPRester
+#from pymatgen import MPRester # depreciated
+from pymatgen.ext.matproj import MPRester # also depreciated, but still works as of 10/2022
 
 #Data science package to handle data
 import pandas as pd
